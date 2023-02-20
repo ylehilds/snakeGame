@@ -14,7 +14,7 @@ export function update() {
 }
 
 export function draw(gameBoard) {
-  console.log('draw snake')
+  console.log('draw food')
   const foodElement = document.createElement('div')
   foodElement.style.gridRowStart = food.y
   foodElement.style.gridColumnStart = food.x
@@ -23,8 +23,8 @@ export function draw(gameBoard) {
 }
 
 function getRandomFoodPosition() {
-  let newFoodPosition
-  while(newFoodPosition == null || onSnake(newFoodPosition)) {
+  let newFoodPosition = randomGridPosition()
+  while(onSnake(newFoodPosition)) {
     newFoodPosition = randomGridPosition()
   }
   return newFoodPosition

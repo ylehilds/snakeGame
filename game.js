@@ -34,7 +34,7 @@ function update() {
     updateFood()
     checkDeath()
 }
-
+ 
 function draw() {
     gameBoard.innerHTML = ''
     drawSnake(gameBoard)
